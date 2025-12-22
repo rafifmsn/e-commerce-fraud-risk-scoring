@@ -1,5 +1,5 @@
 
-# E-commerce Fraud Risk Scoring
+# 🛡️ E-commerce Fraud Risk Scoring
 
 ![Thumbnail](/assets/og.png)
 
@@ -24,7 +24,7 @@ This repository contains the code, trained model, sample data, and documentation
 
 ### assets
 - `og.png` — README thumbnail
-- `understanding-fraud-signals-in-e-commerce-an-interpretable-machine-learning-study.pdf` — Full study  
+- `study.pdf` — Full study  
 
 ### train  
 - `fraudulent_online_shops_dataset.csv` — Original dataset  
@@ -33,25 +33,17 @@ This repository contains the code, trained model, sample data, and documentation
 - `train_model.py` — Script to train/reproduce the model  
 
 ### Root Directory  
+- `app.py` — Streamlit web application (interactive dashboard)
 - `score_generator.py` — CLI scoring tool (supports single & batch mode)  
 - `sample_shops.csv` — Example CSV input file (template for feature order)  
 - `requirements.txt` — Python dependencies  
 - `README.md` — Project overview and instructions  
 
-## 📄 Dataset & attribution
-
-**Dataset used:**  
-Fraudulent and Legitimate Online Shops Dataset (Mendeley Data)  
-URL: [data.mendeley.com](https://data.mendeley.com/datasets/m7xtkx7g5m/1)
-**Original contributors:** Audronė Janavičiūtė, Agnius Liutkevičius  
-**Published:** 22 December 2023  
-**License:** CC BY 4.0
-
 ## 🛠️ Quick start
 
 ### Requirements
 
-Python 3.8+ is required (3.10 recommended).
+Python 3.9+ is required (3.11 recommended).
 ```bash
 pip install -r requirements.txt
 ```
@@ -63,6 +55,20 @@ Clone the repository:
 git clone https://github.com/rafifmsn/e-commerce-fraud-risk-scoring.git
 cd e-commerce-fraud-risk-scoring
 ```
+
+### Usage: Interactive Web Dashboard
+
+For a graphical user interface to process CSV files or input JSON records manually:
+
+```bash
+streamlit run app.py
+```
+
+Features of the Web UI:
+
+- Batch Processing: Upload a CSV to get real-time risk tiers and a summary of high-risk shops.
+- Excel-Safe Export: The "Download Scored CSV" button uses specialized encoding (`utf-8-sig`) to ensure decimal points are displayed correctly in Excel/Google Sheets.
+- Manual Input: A dedicated tab for testing single JSON objects with instant visual risk metrics.
 
 ### Usage: Fraud Risk Scoring CLI
 
@@ -156,7 +162,12 @@ Keep `model_metadata.json` alongside `model.pkl` so `score_generator.py` can val
 -   Provide transparency to affected parties and allow appeal or verification steps.
 -   Respect robots.txt and legal constraints when collecting additional data.
 
-## 🔑 License & citation
+## 📄 Dataset & attribution
 
--   **Repository code:** MIT
--   **Dataset:** CC BY 4.0
+**Dataset used:**  
+Fraudulent and Legitimate Online Shops Dataset (Mendeley Data)  
+URL: [data.mendeley.com](https://data.mendeley.com/datasets/m7xtkx7g5m/1)
+**Original contributors:** Audronė Janavičiūtė, Agnius Liutkevičius  
+**Published:** 22 December 2023  
+**License:** CC BY 4.0  
+**Repository license:** MIT
